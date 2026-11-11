@@ -18,6 +18,9 @@
 .row.open .plus { transform: rotate(45deg); }
 .bullets { margin: 0; padding: 0 8px 24px; list-style: none; display: flex; flex-direction: column; gap: 10px; max-width: 72ch; color: var(--soft); }
 .bullets li { display: flex; gap: 12px; }
+.award { display: flex; flex-direction: column; gap: 2px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.award-t { font-size: 15px; font-weight: 500; }
+.award-d { font-size: 13px; color: var(--muted); }
 .callout { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 28px; border: 1px solid var(--ox); border-radius: 16px; background-color: #F3E8E3; text-decoration: none; }
 </style>
 </head>
@@ -46,12 +49,23 @@
 <div id="filters" role="group" aria-label="Filter roles" style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 8px"></div>
 </section>
 
-<section style="display: flex; flex-direction: column; gap: 24px; padding-bottom: 96px">
+<section style="display: flex; flex-direction: column; gap: 24px; padding-bottom: 0">
 <a id="callout" class="callout rise" href="research.html" hidden>
 <span style="display: flex; flex-direction: column; gap: 4px"><span class="serif" style="font-size: 28px; line-height: 1.15">Read my policy briefs</span><span style="font-size: 15px; color: var(--muted)">Four economic policy papers on foreign aid, AI and jobs, gig work, and credit</span></span>
 <span style="font-size: 15px; font-weight: 500; color: var(--ox)">Go to Research →</span>
 </a>
 <div id="list" style="display: flex; flex-direction: column; border-top: 1px solid var(--line)"></div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 16px; padding: 40px 0 72px">
+<h2 class="serif" style="font-size: 32px">Awards &amp; Honors</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0 40px">
+<div class="award"><span class="award-t">Business Today International Conference</span><span class="award-d">Selected participant, 150 of 4,000+ applicants</span></div>
+<div class="award"><span class="award-t">Cameron Impact Scholarship</span><span class="award-d">Finalist, 100 of 3,000+ applicants</span></div>
+<div class="award"><span class="award-t">NOFC Parliamentary Debate</span><span class="award-d">2x National Champion</span></div>
+<div class="award"><span class="award-t">NSDA Nationals, Original Oratory</span><span class="award-d">Top 30 of 8,000+ competitors nationally</span></div>
+<div class="award"><span class="award-t">Tournament of Champions, Informative Speaking</span><span class="award-d">Top 15 of 6,000+ competitors nationally</span></div>
+</div>
 </section>
 
 <footer class="footer">
