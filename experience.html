@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experience · Avery Chang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.pill { padding: 10px 18px; min-height: 44px; border-radius: 999px; font-size: 14px; border: 1px solid var(--edge); color: var(--soft); background-color: var(--fill); transition: color .2s ease, background .2s ease, border-color .2s ease; }
+.pill.active { border-color: var(--ink); background: var(--forest); color: var(--cream); }
+.row { border-bottom: 1px solid var(--line); transition: background .2s ease; }
+.row:hover { background: rgba(43,42,38,0.04); }
+.row-btn { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 16px; align-items: center; padding: 20px 8px; text-align: left; min-height: 44px; }
+.plus { font-size: 22px; color: var(--ox); display: inline-block; transition: transform .25s ease; }
+.row.open .plus { transform: rotate(45deg); }
+.bullets { margin: 0; padding: 0 8px 24px; list-style: none; display: flex; flex-direction: column; gap: 10px; max-width: 72ch; color: var(--soft); }
+.bullets li { display: flex; gap: 12px; }
+.callout { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 28px; border: 1px solid var(--ox); border-radius: 16px; background-color: #F3E8E3; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div aria-hidden="true" class="glow glow1" style="top: -240px; left: -180px; width: 620px; height: 620px; background: var(--ox); opacity: 0.14; filter: blur(140px)"></div>
+<div aria-hidden="true" class="grid-bg"></div>
+<div aria-hidden="true" class="spot"></div>
+
+<div class="wrap">
+
+<header class="top">
+<a href="index.html" class="brand">Avery Chang</a>
+<nav class="nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="experience.html" aria-current="page">Experience</a>
+<a href="research.html">Research</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section style="display: flex; flex-direction: column; gap: 20px; padding: 72px 0 40px">
+<h1 class="page-h serif" style="font-size: 88px; line-height: 1; letter-spacing: -0.02em">Experience</h1>
+<p style="margin: 0; max-width: 58ch; font-size: 20px; color: var(--soft)">Strategy, growth, and building organizations, with policy work along the way.</p>
+<div id="filters" role="group" aria-label="Filter roles" style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 8px"></div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 24px; padding-bottom: 96px">
+<a id="callout" class="callout rise" href="research.html" hidden>
+<span style="display: flex; flex-direction: column; gap: 4px"><span class="serif" style="font-size: 28px; line-height: 1.15">Read my policy briefs</span><span style="font-size: 15px; color: var(--muted)">Four economic policy papers on foreign aid, AI and jobs, gig work, and credit</span></span>
+<span style="font-size: 15px; font-weight: 500; color: var(--ox)">Go to Research →</span>
+</a>
+<div id="list" style="display: flex; flex-direction: column; border-top: 1px solid var(--line)"></div>
+</section>
+
+<footer class="footer">
+<span>© 2026 Avery Chang</span>
+<span>Built with Claude</span>
+</footer>
+</div>
+</div>
+
+<script src="site.js"></script>
+<script>
+(function () {
+  var filterDefs = [
+    { id: 'all', label: 'All' },
+    { id: 'strategy', label: 'Strategy & Growth' },
+    { id: 'leadership', label: 'Team Management' },
+    { id: 'policy', label: 'Policy' }
+  ];
+  var work = [
+    { id: 'rem', tags: ['strategy'], org: 'Rem and Company', role: 'Strategist', dates: 'Oct 2026 – Present', bullets: [
+      'Analyze clients’ operational challenges, manage research workstreams, and build strategy deliverables',
+      'Present data-driven strategic recommendations to the client in weekly meetings alongside a team lead'
+    ] },
+    { id: 'sensa', tags: ['strategy'], org: 'SENSA (Stanford Social Entrepreneurial Students’ Association)', role: 'Consultant', dates: 'Oct 2026 – Present', bullets: [
+      'Develop fundraising strategy and write grant proposals for an international social impact project',
+      'Advise social enterprises on growth and funding strategy'
+    ] },
+    { id: 'dba', tags: ['strategy'], org: 'Docubridge AI', role: 'SEO Growth Intern', dates: 'Jun – Aug 2025', bullets: [
+      'Developed a market expansion plan for a VC-backed AI fintech startup serving growth equity firms',
+      'Presented a competitive SEO growth strategy to the CEO and board, projecting 80% traffic growth',
+      'Benchmarked backlinks of three competitors (Daloopa, Datarails, Causal) and designed outreach to 9 finance sites',
+      'Audited site UX and technical SEO and set up analytics to track bounce rate, CTR, and organic leads'
+    ] },
+    { id: 'iyp', tags: ['policy', 'leadership'], org: 'Institute for Youth in Policy', role: 'Economic Policy Team Lead', dates: 'Jan 2025 – May 2026', bullets: [
+      'Led and trained 20+ analysts from 12 countries, setting topics and editing briefs that reached 25,000+ readers',
+      'Built a 30-nation multivariate regression (R = 0.979) ranking five sectors by impact on HDI',
+      'Developed quantitative and financial models to analyze urban policy and international aid'
+    ] },
+    { id: 'yes', tags: ['strategy'], org: 'Yale Entrepreneurial Society', role: 'Fellow', dates: 'Jan – Apr 2025', bullets: [
+      'Selected as 1 of 100 students from 25 countries for a fellowship taught by Yale SOM professors and VCs',
+      'Built a data-driven donation verification platform to improve donor-charity trust, piloted with 15 charities'
+    ] },
+    { id: 'fgm', tags: ['leadership', 'strategy'], org: 'FirstGen Mentors', role: 'Founder & President', dates: 'Nov 2024 – Jun 2026', bullets: [
+      'Launched a career-prep nonprofit (mentorship, live Q&As, workshops, podcast) reaching 10,000+ first-gen students',
+      'Scaled from 100 to 10,000 students in six months, managing a team of 50+',
+      'Recruited 220+ industry experts and mentors (doctors, lawyers, bankers) from 15 states and 9 countries',
+      'Secured partnerships with 12 NGOs and built the website, resource database, and sign-up system'
+    ] },
+    { id: 'jpf', tags: ['leadership', 'policy'], org: 'Junior Philanthropists Foundation', role: 'National Marketing Director', dates: 'Sep 2024 – Jan 2026', bullets: [
+      'Launched national campaigns and policy resources for 10,000+ members across 25 states',
+      'Lobbied 50+ members of Congress and built partnerships with UN COY19 and CalFire'
+    ] },
+    { id: 'nrm', tags: ['policy', 'strategy'], org: 'NerdRock Media', role: 'Campaign Finance Intern', dates: 'Apr – Nov 2024', bullets: [
+      'Managed $1M+ in ad operations for interest groups in the 2024 presidential election, driving 3,000+ daily site visits',
+      'Partnered with 4 PACs to reach AAPI and BIPOC voters, improving campaign engagement by 60%',
+      'Ran a Google Analytics dashboard tracking campaign performance and reporting on ad targeting'
+    ] }
+  ];
+
+  // Sort by end date, newest first ("Present" on top)
+  var mon = { Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6, Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12 };
+  function endKey(d) {
+    var e = String(d).split('–').pop().trim();
+    if (/present/i.test(e)) return 999999;
+    var p = e.split(' ');
+    return Number(p[1]) * 12 + (mon[p[0]] || 0);
+  }
+  work.sort(function (a, b) { return endKey(b.dates) - endKey(a.dates); });
+
+  var state = { filter: 'all', open: 'rem' };
+  var filtersEl = document.getElementById('filters');
+  var listEl = document.getElementById('list');
+  var callout = document.getElementById('callout');
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function renderFilters() {
+    filtersEl.innerHTML = '';
+    filterDefs.forEach(function (f) {
+      var b = el('button', 'pill' + (state.filter === f.id ? ' active' : ''), f.label);
+      b.setAttribute('aria-pressed', String(state.filter === f.id));
+      b.addEventListener('click', function () { state.filter = f.id; render(); });
+      filtersEl.appendChild(b);
+    });
+  }
+
+  function renderList() {
+    listEl.innerHTML = '';
+    work.filter(function (w) { return state.filter === 'all' || w.tags.indexOf(state.filter) !== -1; })
+      .forEach(function (w) {
+        var open = state.open === w.id;
+        var row = el('div', 'row' + (open ? ' open' : ''));
+        var btn = el('button', 'row-btn');
+        btn.setAttribute('aria-expanded', String(open));
+        var left = el('span');
+        left.style.cssText = 'display: flex; flex-direction: column; gap: 2px';
+        var org = el('span', null, w.org); org.style.cssText = 'font-size: 20px; font-weight: 500';
+        var role = el('span', null, w.role); role.style.cssText = 'font-size: 14px; color: var(--muted)';
+        left.appendChild(org); left.appendChild(role);
+        var dates = el('span', 'mono', w.dates); dates.style.cssText = 'font-size: 13px; color: var(--faint)';
+        var plus = el('span', 'plus', '+'); plus.setAttribute('aria-hidden', 'true');
+        btn.appendChild(left); btn.appendChild(dates); btn.appendChild(plus);
+        btn.addEventListener('click', function () { state.open = open ? null : w.id; renderList(); });
+        row.appendChild(btn);
+        if (open) {
+          var ul = el('ul', 'bullets rise');
+          w.bullets.forEach(function (t) {
+            var li = el('li');
+            var arrow = el('span', null, '→'); arrow.style.color = 'var(--ox)'; arrow.setAttribute('aria-hidden', 'true');
+            li.appendChild(arrow); li.appendChild(el('span', null, t));
+            ul.appendChild(li);
+          });
+          row.appendChild(ul);
+        }
+        listEl.appendChild(row);
+      });
+  }
+
+  function render() {
+    renderFilters();
+    callout.hidden = state.filter !== 'policy';
+    renderList();
+  }
+  render();
+})();
+</script>
+</body>
+</html>
